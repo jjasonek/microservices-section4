@@ -65,3 +65,28 @@ size of the build image is 310MB in comparison with 503MB for accounts
 ### run the container
 PS C:\Training\Microservices\section4\loans> docker run -d -p 8090:8090 eazybytes/loans:s4
 beab93cb6b414c80df768d2a78f4a94b223df6abb4844a84bfcdb9805a7a7704
+
+
+## Dockerizing loans by Buildpacks Google Jib
+
+### build the image
+PS C:\Training\Microservices\section4\loans> cd ..\cards\
+PS C:\Training\Microservices\section4\cards> mvn compile jib:dockerBuild
+...
+[INFO] Built image to Docker daemon as eazybytes/cards:s4
+
+
+PS C:\Training\Microservices\section4\cards> docker images
+REPOSITORY                                 TAG       IMAGE ID       CREATED         SIZE
+eazybytes/accounts                         s4        a25eb3d0b593   18 hours ago    503MB
+...
+eazybytes/loans                            s4        5acf471ccc2d   45 years ago    310MB
+eazybytes/cards                            s4        040ba03ca6b8   55 years ago    351MB
+
+### note 
+The image is a bit bigger than the one built by buildpacks 
+but still much smaller than the one built by Dockerfile approach
+
+### run the container
+PS C:\Training\Microservices\section4\cards> docker run -d --rm -p 9000:9000 eazybytes/cards:s4
+9a33f9334f80280c92a984fcfabaa7ec95f98a3b1133086e22e78a93c7744e50
