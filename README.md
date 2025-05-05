@@ -104,3 +104,28 @@ s4: digest: sha256:ca36b7f5455b68c41b5ac6db7fba05b49ac317d40db81202b15b24e0e8c44
 PS C:\Training\Microservices\section4\cards> docker image push docker.io/jjasonek/loans:s4
 
 PS C:\Training\Microservices\section4\cards> docker image push docker.io/jjasonek/cards:s4
+
+
+##  Compose file
+We create inside the accounts project. It does not matter where it is placed. 
+We just want to push it to the docker hub so it must be inside of one of the projects.
+
+### Start the containers
+PS C:\Training\Microservices\section4\cards> cd ..\accounts\
+PS C:\Training\Microservices\section4\accounts> docker compose up -d
+[+] Running 4/4
+✔ Network accounts_eazybank  Created                                                                                                                                                                                                                                                                                                                                                0.1s
+✔ Container cards-ms         Started                                                                                                                                                                                                                                                                                                                                                1.2s
+✔ Container accounts-ms      Started                                                                                                                                                                                                                                                                                                                                                1.2s
+✔ Container loans-ms         Started                                                                                                                                                                                                                                                                                                                                                1.2s
+PS C:\Training\Microservices\section4\accounts>
+
+
+### Stop the containers wit deleting them
+PS C:\Training\Microservices\section4\accounts> docker compose down
+[+] Running 4/4
+✔ Container loans-ms         Removed                                                                                                                                                                                                                                                                                                                                                0.9s
+✔ Container cards-ms         Removed                                                                                                                                                                                                                                                                                                                                                1.1s
+✔ Container accounts-ms      Removed                                                                                                                                                                                                                                                                                                                                                1.0s
+✔ Network accounts_eazybank  Removed                                                                                                                                                                                                                                                                                                                                                0.7s
+PS C:\Training\Microservices\section4\accounts>
