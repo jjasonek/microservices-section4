@@ -90,3 +90,17 @@ but still much smaller than the one built by Dockerfile approach
 ### run the container
 PS C:\Training\Microservices\section4\cards> docker run -d --rm -p 9000:9000 jjasonek/cards:s4
 9a33f9334f80280c92a984fcfabaa7ec95f98a3b1133086e22e78a93c7744e50
+
+
+## Push image to Docker Hub
+PS C:\Training\Microservices\section4\cards> docker image push docker.io/jjasonek/accounts:s4
+The push refers to repository [docker.io/jjasonek/accounts]
+f28814da67dd: Pushed
+659a8c4ba776: Mounted from library/openjdk
+0ac7ecf8a41c: Mounted from library/openjdk
+d310e774110a: Mounted from library/openjdk
+s4: digest: sha256:ca36b7f5455b68c41b5ac6db7fba05b49ac317d40db81202b15b24e0e8c446ac size: 1165
+
+PS C:\Training\Microservices\section4\cards> docker image push docker.io/jjasonek/loans:s4
+
+PS C:\Training\Microservices\section4\cards> docker image push docker.io/jjasonek/cards:s4
