@@ -100,7 +100,7 @@
 				<version>3.4.5</version>
 				<configuration>
 					<to>
-						<image>eazybytes/${project.artifactId}:s4</image>
+						<image>jjasonek/${project.artifactId}:s4</image>
 					</to>
 				</configuration>
 			</plugin>

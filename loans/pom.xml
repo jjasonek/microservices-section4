@@ -83,7 +83,7 @@
 				<configuration>
 <!--					docker image configuration-->
 					<image>
-						<name>eazybytes/${project.artifactId}:s4</name>
+						<name>jjasonek/${project.artifactId}:s4</name>
 					</image>
 				</configuration>
 			</plugin>
